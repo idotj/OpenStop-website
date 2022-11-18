@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OpenStop App</title>
+    <meta name="description" content="OpenStop ist eine freie auf OpenStreetMap basierende App, die jedem eine einfache Erfassung von Barrierefreiheitsdaten an und um Haltestellen ermöglicht.">
+    <link rel="icon" href="img/favicon.svg" sizes="any" type="image/svg+xml">
+    <meta name="theme-color" content="#ffcd40">
+
+    <link rel="preload" href="font/Comfortaa_Regular.woff" as="font" type="font/woff">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Splide image carousel -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide-core.min.css" as="style" onload="this.onload=null; this.rel='stylesheet'">
+    <script defer src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
+    <noscript>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide-core.min.css">
+
+      <style>
+        .page-header .carousel {
+          visibility: visible;
+          padding-bottom: 5%;
+        }
+        .splide li:first-child {
+          flex-shrink: 1;
+        }
+        .splide li + li {
+          display: none;
+        }
+      </style>
+    </noscript>
+
+    <script type="module" src="main.js"></script>
+  </head>
+  <body class="visible">
+    <header class="page-header page-section slant-bottom">
+      <div class="section-content">
+        <div class="intro">
+          <div class="logo" aria-hidden="true">
+            <img alt="" src="img/logo.svg">
+            <!-- this needs to be inline in order to be able to use the overflow property for the svg view box -->
+            <svg version="1.1" viewBox="0 0 898.45 285.25" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="linear-gradient" x1="327.6" x2="515.96" y1="479.42" y2="291.06" gradientUnits="userSpaceOnUse">
+                <stop offset=".1"/>
+                <stop stop-opacity="0" offset=".8"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(515.96 -144.57)" opacity=".1">
+                <path d="m533.05 379.45c-39.467 16.785-100.7 21.339-144.26 11.573l-85.819 34.747c-7.3097 2.9596-19.134 3.29-26.404 0.7378-7.2759-2.5542-7.2181-6.983 0.1162-9.8942l86.183-34.208c-30.698-14.758-25.657-36.62 14.463-51.749 44.762-16.88 115.54-20.361 158.1-7.7733 42.548 12.586 41.483 37.913-2.3781 56.567z" fill="url(#linear-gradient)"/>
+              </g>
+            </svg>
+          </div>
+          <h1>Erfassung von Daten zur Barrierefreiheit im <abbr title="Öffentlicher Personennahverkehr">ÖPNV</abbr> leicht gemacht.</h1>
+        </div>
+
+        <div class="install">
+          <a href="https://play.google.com/store/apps/details?id=de.tu_chemnitz.etit.sse.openstop" title="OpenStop im Google Play Store aufrufen">
+            <img alt="Google Play Store Seite zu OpenStop aufrufen" src="img/Google_Play_Store_badge_EN.svg">
+          </a>
+          <a href="#" title="OpenStop im AppStore aufrufen">
+            <img alt="App Store Seite zu OpenStop aufrufen" src="img/Download_on_the_App_Store_Badge_DE.svg">
+          </a>
+          <a href="https://github.com/OPENER-next/OpenStop/releases" title="OpenStop auf GitHub aufrufen">
+            <img alt="GitHub Seite zu OpenStop aufrufen" src="img/Github_badge.svg">
+          </a>
+        </div>
+
+        <div class="preview">
+          <div class="carousel splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img alt="App-Screenshot zeigt die Übersichtskarte von OpenStop mit umliegenden Haltestellen." title="Haltestellen sind mit einem roten Kreis markiert." src="img/screenshot01.webp">
+                </li>
+                <li class="splide__slide">
+                  <img alt="App-Screenshot zeigt folgende Ja/Nein-Frage: Besitzt der Fahrtzielanzeiger eine Sprachausgabe?" src="img/screenshot02.webp">
+                </li>
+                <li class="splide__slide">
+                  <img alt="App-Screenshot zeigt folgende Auswahl-Frage: Welche Spurführung besitzt die Plattform?" src="img/screenshot03.webp">
+                </li>
+                <li class="splide__slide">
+                  <img alt="App-Screenshot zeigt die Zusammenfassung aller vom Nutzer gegebenen Antworten." src="img/screenshot04.webp">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="motivation-section page-section slant-bottom">
+        <div class="section-content text-banner">
+          <figure class="quote">
+            <blockquote cite="https://www.gesetze-im-internet.de/pbefg/__8.html">
+              <p>[...] für die Nutzung des öffentlichen Personen&shy;nahverkehrs [ist] bis zum <mark><time datetime="2022-01-01">1. Januar 2022</time></mark> eine <mark>vollständige Barrierefreiheit</mark> zu erreichen.</p>
+            </blockquote>
+            <figcaption class="smaller"><abbr title="Personenbeförderungsgesetz">PBefG</abbr><cite> - § 8 Abs. 3</cite></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="how-to-section page-section">
+        <div class="section-content">
+          <h2>Hilf mit den aktuellen Stand zu erfassen</h2>
+          <ol class="boxes">
+            <li>
+              <img alt="" src="img/ht_visit.svg">
+              <h3>Begib dich zu einer Haltestelle in deiner Nähe</h3>
+            </li>
+            <li>
+              <img alt="" src="img/ht_answer.svg">
+              <h3>Beantworte die angezeigten Fragen</h3>
+            </li>
+            <li>
+              <img alt="" src="img/ht_upload.svg">
+              <h3>Lade deine Antworten für alle frei zugänglich hoch</h3>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="osm-section page-section slant-top slant-bottom">
+        <div class="section-content text-banner">
+          <p>
+            Alle erhobenen Daten werden direkt auf <mark>OpenStreetMap</mark> gespeichert und sind dort für jeden <mark>frei verfügbar.</mark>
+          </p>
+          <p class="smaller">
+            Leg jetzt los und <a href="https://www.openstreetmap.org/user/new">erstell dir deinen Account</a>.
+          </p>
+          <img alt="" class="osm-logo" src="img/Openstreetmap_logo.svg">
+        </div>
+      </section>
+
+      <section class="impact-section page-section">
+        <div class="section-content">
+          <h2>Datenerhebung für einen besseren ÖPNV</h2>
+          <ul class="boxes">
+            <li>
+              <img alt="" src="img/noun-todo-list-2577194.svg">
+              <div>
+                <h3>Einheitliche offene Datenbasis</h3>
+                <p>Um deutschlandweit Auskünfte für barrierefreie Reiserouten zu ermöglichen ist eine einheitliche Datenbasis eine Grundvoraussetzung. Durch freie Zugänglichkeit und einer standardisierten Datenerhebung ist es möglich, dass verschiedene Menschen, Projekte oder Unternehmen ihren Teil zur gemeinsamen Datenbasis beitragen können, wovon alle profitieren.</p>
+              </div>
+            </li>
+            <li>
+              <img alt="" src="img/noun-navigation-2577219.svg">
+              <div>
+                <h3>Verbessertes barrierefreies Routing und Navigation</h3>
+                <p>Auf Basis der erhobenen Daten können Algorithmen individuell geeignete Routen berechnen. Deren Zugänglichkeit, welche insbesondere für Mobilitäts-, Seh- oder Höreinschränkte relevant ist, kann dabei bereits vor Reiseantritt analysiert,  bewertet und dargestellt werden. Für den Umstieg an Haltestellen können zusätzlich hilfreiche Informationen in die Navgation mit einfließen, z.B. ob an einer Treppe ein Handlauf mit Blindenschrift vorhanden ist.</p>
+              </div>
+            </li>
+            <li>
+              <img alt="" src="img/noun-under-construction-2577221.svg">
+              <div>
+                <h3>Ausbaupriorisierung</h3>
+                <p>Mit Hilfe geeigneter Analyse-Tools lässt sich aus den erfassten Daten der Grad an Barrierefreiheit einer Haltestelle ableiten. So kann für ganze Städte und Regionen der gegenwärtige Stand des barrirefreien Ausbaus dokumentiert werden. In Kombination mit demografischen Daten, z.B. der Bevölkerungsdichte, lässt sich daraus der bedarfsgerechtere Ausbaus von Bus- und Bahnhaltestellen planen.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="funding-section page-section slant-top">
+        <div class="section-content text-banner">
+          <p>
+            OpenStop wird im Rahmen des Projekts <mark>OPENER next</mark> entwickelt, das vom <abbr title="Bundesministerium für Digitales und Verkehr">BMDV</abbr> im Rahmen der Innovationsinitiative <mark><abbr title="Modernitätsfonds">mFUND</abbr></mark> gefördert wird.
+          </p>
+          <p class="smaller">
+            Erfahre mehr <a href="https://www.openernext.de">über das Projekt OPENER next.</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer page-section slant-top">
+      <div class="section-content">
+        <ul class="links">
+          <li><a href="https://www.openernext.de/de/contact.html">Kontakt</a></li>
+          <li><a href="https://www.openernext.de/de/imprint.html">Impressum</a></li>
+          <li><a href="https://github.com/OPENER-next/OpenStop/blob/master/PRIVACY_POLICY.md">Dateschutzerklärung</a></li>
+          <li><a href="https://github.com/OPENER-next/OpenStop-website/blob/main/CREDITS.md">Credits</a></li>
+          <li><a href="https://github.com/OPENER-next/OpenStop">GitHub</a></li>
+        </ul>
+        <div class="banner">
+          <img alt="Logo des mFUND" title="Modernitätsfonds" src="img/mFUND_Logo_sRGB.png">
+          <img alt="Logo des BMDV" title="Das Bundesministerium für Digitales und Verkehr" id="bmdv" src="img/BMDV_Fz_2021_Office_Farbe_de.png">
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

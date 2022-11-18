@@ -1,0 +1,606 @@
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Comfortaa'), url('font/Comfortaa_Regular.woff') format('woff');
+  font-display: swap;
+}
+
+:root {
+  --slantHeight: 15vw;
+  --primaryForeground: #009d5e;
+  --primaryBackground: #ffcd40;
+
+  --backgroundImage01: url(img/woman_at_bus_stop_bg.webp);
+  --backgroundImage02: url(img/osm_map_bg.webp);
+  --backgroundImage03: url(img/station_bg.webp);
+}
+
+/**
+ * Base styles
+ **/
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+}
+
+:focus-visible {
+  outline: dotted 2px var(--primaryForeground);
+  outline-offset: 0.25em;
+}
+
+html {
+  font-family: Comfortaa, sans-serif;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+
+h1, h2 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  max-width: 8em;
+  height: 0.4rem;
+  margin: 0.2em 0;
+  background: #000;
+  box-shadow: 0.1rem 0.1rem 0.1rem rgba(0,0,0,0.5)
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+abbr {
+  cursor: help;
+  text-decoration-style: dotted;
+  text-decoration-line: underline;
+}
+
+a {
+  color: var(--primaryForeground);
+  text-decoration-style: solid;
+  text-decoration-line: underline;
+  font-weight: normal;
+}
+a:hover,
+a:focus {
+  text-decoration-thickness: 0.15em;
+}
+
+::selection {
+  color: var(--primaryBackground);
+  background: var(--primaryForeground);
+}
+
+/**
+ * Sections
+ **/
+
+.page-section {
+  background-color: var(--primaryBackground);
+}
+
+.section-content {
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: inherit;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+
+.text-banner {
+  font-size: 3rem;
+  color: #fff;
+  line-height: 1.5;
+  text-shadow: 0.05em 0.05em 0.05em rgba(0,0,0,0.5);
+}
+
+.text-banner .smaller {
+  font-size: 0.6em;
+  margin-top: 1em;
+}
+
+.text-banner a {
+  display: inline;
+  color: inherit;
+  text-decoration-color: var(--primaryBackground);
+}
+
+.text-banner a:hover,
+.text-banner a:focus {
+  display: inline;
+}
+
+ /* Header Section */
+
+.page-header {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-image:
+    linear-gradient(0, rgba(0,35,0,0.5) 0%, rgba(0,35,0,0.5) 100%),
+    var(--backgroundImage01);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.page-header.page-section.slant-bottom::after {
+  clip-path: polygon(0 0, 100% 0, 100% calc(90% - var(--slantHeight)), 0 90%);
+}
+
+.page-header .section-content  {
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-row-gap: 3rem;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "intro preview"
+    "install preview";
+}
+
+.page-header .intro {
+  grid-area: intro;
+  align-self: end;
+}
+
+.page-header .logo {
+  position: relative;
+  max-width: 700px;
+}
+
+.page-header .logo > * {
+  display: block;
+}
+
+.page-header .logo > svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.page-header h1 {
+  margin-top: 1em;
+}
+
+.page-header .preview {
+  grid-area: preview;
+  position: relative;
+  align-self: center;
+  justify-self: end;
+}
+
+.page-header .preview::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(img/iphone.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.page-header .carousel {
+  max-width: 360px;
+  padding: 5% 6.25% 0 5%;
+}
+
+.page-header .splide__track {
+  position: relative;
+  height: 100%;
+  border-radius: 12% / 6%;;
+  overflow: hidden;
+}
+
+.page-header .splide__pagination {
+  grid-gap: 1rem;
+  margin-top: 2rem;
+}
+
+.page-header .splide__pagination__page {
+  padding: 0.5rem;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 5px rgba(0,0,0,0.3), 1px 1px 5px rgba(0,0,0,0.3);
+  border: solid 0.2em white;
+  transition: 0.3s;
+}
+
+.page-header .splide__pagination__page.is-active {
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+  background: var(--primaryForeground);
+}
+
+
+.page-header .install {
+  grid-area: install;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  grid-gap: 1em;
+}
+
+.page-header .install img {
+  display: block;
+  height: 3.5rem;
+}
+
+ /* Motivation Section */
+
+.motivation-section {
+  background-attachment: fixed;
+  background-image:
+    linear-gradient(0, rgba(0,35,0,0.5) 0%, rgba(0,35,0,0.5) 100%),
+    var(--backgroundImage01);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: var(--slantHeight);
+}
+
+.motivation-section .quote figcaption {
+  display: flow-root;
+}
+
+.motivation-section .quote figcaption::after {
+  content: "\201D";
+  font-family: Georgia, serif;
+  font-size: 8em;
+  float: right;
+  line-height: 0;
+  padding-top: 0.4em;
+}
+
+ /* How To Section */
+
+ .how-to-section h2 {
+  margin-bottom: 1.5em;
+}
+
+.how-to-section > .section-content {
+  padding: calc(2rem + 2vw) 2rem;
+}
+
+.how-to-section .boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  grid-gap: 4rem;
+  list-style: none;
+}
+
+.how-to-section h3 {
+  margin-top: 1em;
+}
+
+.how-to-section .boxes > li {
+  flex-basis: 16rem;
+  flex-grow: 0.3;
+}
+
+ /* OSM Section */
+
+.osm-section {
+  background-attachment: fixed;
+  background-image:
+    linear-gradient(0, rgba(0,35,0,0.65) 0%, rgba(0,35,0,0.65) 100%),
+    var(--backgroundImage02);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: var(--slantHeight);
+}
+
+.osm-section .section-content {
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  flex-direction: column;
+}
+
+.osm-section .section-content .osm-logo {
+  align-self: end;
+}
+
+
+/* Impact Section */
+
+.impact-section h2 {
+  margin-bottom: 1.5em;
+}
+
+.impact-section .boxes {
+  list-style: none;
+}
+
+.impact-section .boxes > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  grid-gap: 2rem;
+}
+
+.impact-section .boxes > li + li {
+  margin-top: 2rem;
+}
+
+.impact-section .boxes > li:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.impact-section .boxes > li > img {
+  filter: drop-shadow(0.1rem 0.1rem 0.1rem rgba(0,0,0,0.5));
+  max-width: 225px;
+}
+
+.impact-section .boxes > li > div {
+  flex: 1 0 300px;
+}
+
+.impact-section .boxes > li h3::after {
+  content: "";
+  display: block;
+  height: 0.4rem;
+  max-width: 8em;
+  margin: 0.5em 0;
+  background: #000;
+  box-shadow: 0.1rem 0.1rem 0.1rem rgba(0,0,0,0.5)
+}
+
+.impact-section .boxes > li p {
+  font-size: 1.1em;
+}
+
+/* Funding Section */
+
+.funding-section {
+  background-attachment: fixed;
+  background-image:
+    linear-gradient(0, rgba(0,35,0,0.65) 0%, rgba(0,35,0,0.65) 100%),
+    var(--backgroundImage03);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: var(--slantHeight);
+}
+
+ /* Footer Section */
+
+.page-footer {
+  background-attachment: fixed;
+  background-image:
+    linear-gradient(0, rgba(0,35,0,0.65) 0%, rgba(0,35,0,0.65) 100%),
+    var(--backgroundImage03);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  min-height: calc(var(--slantHeight) + 2rem);
+}
+
+.page-footer.slant-top::before {
+  clip-path: polygon(0 var(--slantHeight), 0 100%, 100% 100%, 100% 0) !important;
+}
+
+
+.page-footer .section-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap-reverse;
+  grid-gap: 2rem;
+}
+
+.page-footer .banner {
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  grid-gap: 2rem;
+  flex-wrap: wrap-reverse;
+}
+
+.page-footer .banner > img {
+  max-width: 220px;
+}
+
+.page-footer .banner > img#bmdv {
+  box-shadow: 0 -3px 5px rgba(0,0,0,0.35);
+}
+
+.page-footer .links {
+  list-style: none;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  grid-row-gap: 0.5em;
+}
+
+.page-footer .links li:not(:last-child)::after {
+  content: "-";
+  margin: 0 0.5em;
+  color: var(--primaryForeground);
+}
+
+/**
+ * Effects
+ **/
+
+ /* Slants */
+
+.page-section.slant-top,
+.page-section.slant-bottom {
+  position: relative;
+}
+
+.page-section.slant-top::before,
+.page-section.slant-bottom::after {
+  content: "";
+  display: block;
+  position: absolute;
+  /* anti aliasing sub pixel workaround */
+  bottom: -0.5px;
+  top: -0.5px;
+  left: 0;
+  right: 0;
+  background-color: var(--primaryBackground);
+  pointer-events: none;
+}
+
+.page-section.slant-top::before {
+  clip-path: polygon(0 var(--slantHeight), 100% 0, 0 0);
+}
+
+.page-section.slant-bottom::after {
+  clip-path: polygon(0 100%, 100% 100%, 100% calc(100% - var(--slantHeight)));
+}
+
+.page-section.slant-top > .section-content,
+.page-section.slant-bottom > .section-content {
+  z-index: 1;
+  position: relative;
+}
+
+/* Text Marker */
+
+mark {
+  display: inline;
+}
+
+mark {
+  color: #000;
+  background-color: transparent;
+  background-image: linear-gradient(90deg, var(--primaryBackground) 50%, rgba(255, 255, 255, 0) 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  margin: 0 -0.2em;
+  padding: 0.2em;
+  border-radius: 28% 0.3em 10% 0.5em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.page-section mark:nth-child(odd) {
+  border-radius: 0.5em 20% 0.75em 15%;
+  transition-delay: 0s;
+}
+.page-section mark:nth-child(even) {
+  border-radius: 28% 0.3em 10% 0.5em;
+  transition-delay: .3s;
+}
+
+.visible mark {
+  text-shadow: none;
+  color: #000;
+  transition: background 0.5s;
+  background-position: 0 0;
+}
+
+
+/* Animated Boxes */
+
+.boxes > * {
+  opacity: 0;
+  transform: translateY(8rem);
+  z-index: 1;
+  position: relative;
+}
+
+.visible .boxes > * {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s, transform 0.8s;
+}
+
+.visible .boxes > *:nth-child(1) { transition-delay: 0s }
+.visible .boxes > *:nth-child(2) { transition-delay: .2s }
+.visible .boxes > *:nth-child(3) { transition-delay: .4s }
+
+
+/**
+ * Breakpoints
+ **/
+
+@media (max-width: 1000px) {
+  .page-header .section-content  {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "intro"
+      "preview"
+      "install";
+  }
+
+  .page-header .preview {
+    justify-self: center;
+  }
+
+  .osm-section {
+    padding-bottom: var(--slantHeight);
+  }
+
+  .osm-section .section-content .osm-logo {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  h1, h2, .text-banner {
+    font-size: 2rem;
+  }
+
+  /*
+    Disable all fixed background images, because they don't work well on mobile
+    Some info about the problem: https://css-tricks.com/the-fixed-background-attachment-hack/
+    Instead show one position fixed background image
+  */
+
+  .page-section.slant-top,
+  .page-section.slant-bottom {
+    background: none !important;
+  }
+
+  body::before {
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-image:
+      linear-gradient(0, rgba(0,35,0,0.5) 0%, rgba(0,35,0,0.5) 100%),
+      var(--backgroundImage01);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+}
+
+/* hide abbreviation style on devices without hover support, because touch devices cannot view the tooltip */
+
+@media (hover: none) {
+  abbr {
+    text-decoration: none;
+  }
+}
