@@ -9,3 +9,5 @@ OpenStreetMap logo by Ken Vermette from [OpenStreetMap](https://wiki.openstreetm
 "Navigation" by Vectors Point from [Noun Project](https://thenounproject.com/icon/navigation-2577219/) licensed under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) / Removed "Created by ..." text
 
 "under construction" by Vectors Point from [Noun Project](https://thenounproject.com/icon/under-construction-2577221/) licensed under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) / Removed "Created by ..." text
+
+"TU Chemnitz Hauptbahnhof" by TU Chemnitz/Jacob Müller
