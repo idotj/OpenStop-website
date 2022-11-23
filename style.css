@@ -69,7 +69,7 @@ abbr {
 }
 
 a {
-  color: var(--primaryForeground);
+  color: #000;
   text-decoration-style: solid;
   text-decoration-line: underline;
   font-weight: normal;
@@ -441,7 +441,7 @@ a:focus {
 .page-footer .links li:not(:last-child)::after {
   content: "-";
   margin: 0 0.5em;
-  color: var(--primaryForeground);
+  color: #000;
 }
 
 /**
