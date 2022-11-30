@@ -10,4 +10,8 @@ OpenStreetMap logo by Ken Vermette from [OpenStreetMap](https://wiki.openstreetm
 
 "under construction" by Vectors Point from [Noun Project](https://thenounproject.com/icon/under-construction-2577221/) licensed under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) / Removed "Created by ..." text
 
+Apple und das Apple-Logo sind Marken der Apple Inc.
+
+Google Play und das Google Play-Logo sind Marken von Google LLC.
+
 "TU Chemnitz Hauptbahnhof" by TU Chemnitz/Jacob Müller
