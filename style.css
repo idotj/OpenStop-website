@@ -1,8 +1,8 @@
 @font-face {
-  font-family: 'Comfortaa';
+  font-family: "Comfortaa";
   font-style: normal;
   font-weight: normal;
-  src: local('Comfortaa'), url('font/Comfortaa_Regular.woff') format('woff');
+  src: local("Comfortaa"), url("font/Comfortaa_Regular.woff") format("woff");
   font-display: swap;
 }
 
@@ -42,7 +42,8 @@ img {
   min-width: 0;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-size: 3rem;
   font-weight: normal;
 }
@@ -54,7 +55,7 @@ h2::after {
   height: 0.4rem;
   margin: 0.2em 0;
   background: #000;
-  box-shadow: 0.1rem 0.1rem 0.1rem rgba(0,0,0,0.5)
+  box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
 }
 
 h3 {
@@ -97,15 +98,14 @@ a:focus {
   max-width: 1200px;
   min-height: inherit;
   box-sizing: border-box;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
 }
-
 
 .text-banner {
   font-size: 3rem;
   color: #fff;
   line-height: 1.5;
-  text-shadow: 0.05em 0.05em 0.05em rgba(0,0,0,0.5);
+  text-shadow: 0.05em 0.05em 0.05em rgba(0, 0, 0, 0.5);
 }
 
 .text-banner .smaller {
@@ -124,24 +124,42 @@ a:focus {
   display: inline;
 }
 
- /* Header Section */
+/* Header Section */
 
 .page-header {
   min-height: 100vh;
   background-attachment: fixed;
-  background-image:
-    linear-gradient(0, rgba(0,35,0,0.5) 0%, rgba(0,35,0,0.5) 100%),
+  background-image: linear-gradient(
+      0,
+      rgba(0, 35, 0, 0.5) 0%,
+      rgba(0, 35, 0, 0.5) 100%
+    ),
     var(--backgroundImage01);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
+.page-header .language {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  box-sizing: border-box;
+  position: relative;
+  text-align: right;
+  padding: 1.5rem 2rem 0 2rem;
+  z-index: 2;
+}
+
+.page-header .language > select {
+  margin-left: auto;
+}
+
 .page-header.page-section.slant-bottom::after {
   clip-path: polygon(0 0, 100% 0, 100% calc(90% - var(--slantHeight)), 0 90%);
 }
 
-.page-header .section-content  {
+.page-header .section-content {
   display: grid;
   grid-column-gap: 2rem;
   grid-row-gap: 3rem;
@@ -208,7 +226,7 @@ a:focus {
 .page-header .splide__track {
   position: relative;
   height: 100%;
-  border-radius: 12% / 6%;;
+  border-radius: 12% / 6%;
   overflow: hidden;
 }
 
@@ -221,16 +239,16 @@ a:focus {
   padding: 0.5rem;
   background: transparent;
   border-radius: 50%;
-  box-shadow: inset 1px 1px 5px rgba(0,0,0,0.3), 1px 1px 5px rgba(0,0,0,0.3);
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3),
+    1px 1px 5px rgba(0, 0, 0, 0.3);
   border: solid 0.2em white;
   transition: 0.3s;
 }
 
 .page-header .splide__pagination__page.is-active {
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
   background: var(--primaryForeground);
 }
-
 
 .page-header .install {
   grid-area: install;
@@ -247,12 +265,15 @@ a:focus {
   height: 3.5rem;
 }
 
- /* Motivation Section */
+/* Motivation Section */
 
 .motivation-section {
   background-attachment: fixed;
-  background-image:
-    linear-gradient(0, rgba(0,35,0,0.5) 0%, rgba(0,35,0,0.5) 100%),
+  background-image: linear-gradient(
+      0,
+      rgba(0, 35, 0, 0.5) 0%,
+      rgba(0, 35, 0, 0.5) 100%
+    ),
     var(--backgroundImage01);
   background-repeat: no-repeat;
   background-size: cover;
@@ -273,9 +294,9 @@ a:focus {
   padding-top: 0.4em;
 }
 
- /* How To Section */
+/* How To Section */
 
- .how-to-section h2 {
+.how-to-section h2 {
   margin-bottom: 1.5em;
 }
 
@@ -300,12 +321,15 @@ a:focus {
   flex-grow: 0.3;
 }
 
- /* OSM Section */
+/* OSM Section */
 
 .osm-section {
   background-attachment: fixed;
-  background-image:
-    linear-gradient(0, rgba(0,35,0,0.65) 0%, rgba(0,35,0,0.65) 100%),
+  background-image: linear-gradient(
+      0,
+      rgba(0, 35, 0, 0.65) 0%,
+      rgba(0, 35, 0, 0.65) 100%
+    ),
     var(--backgroundImage02);
   background-repeat: no-repeat;
   background-size: cover;
@@ -323,7 +347,6 @@ a:focus {
 .osm-section .section-content .osm-logo {
   align-self: end;
 }
-
 
 /* Impact Section */
 
@@ -352,7 +375,7 @@ a:focus {
 }
 
 .impact-section .boxes > li > img {
-  filter: drop-shadow(0.1rem 0.1rem 0.1rem rgba(0,0,0,0.5));
+  filter: drop-shadow(0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5));
   max-width: 225px;
 }
 
@@ -367,7 +390,7 @@ a:focus {
   max-width: 8em;
   margin: 0.5em 0;
   background: #000;
-  box-shadow: 0.1rem 0.1rem 0.1rem rgba(0,0,0,0.5)
+  box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
 }
 
 .impact-section .boxes > li p {
@@ -378,8 +401,11 @@ a:focus {
 
 .funding-section {
   background-attachment: fixed;
-  background-image:
-    linear-gradient(0, rgba(0,35,0,0.65) 0%, rgba(0,35,0,0.65) 100%),
+  background-image: linear-gradient(
+      0,
+      rgba(0, 35, 0, 0.65) 0%,
+      rgba(0, 35, 0, 0.65) 100%
+    ),
     var(--backgroundImage03);
   background-repeat: no-repeat;
   background-size: cover;
@@ -387,12 +413,15 @@ a:focus {
   padding-top: var(--slantHeight);
 }
 
- /* Footer Section */
+/* Footer Section */
 
 .page-footer {
   background-attachment: fixed;
-  background-image:
-    linear-gradient(0, rgba(0,35,0,0.65) 0%, rgba(0,35,0,0.65) 100%),
+  background-image: linear-gradient(
+      0,
+      rgba(0, 35, 0, 0.65) 0%,
+      rgba(0, 35, 0, 0.65) 100%
+    ),
     var(--backgroundImage03);
   background-repeat: no-repeat;
   background-size: cover;
@@ -402,9 +431,13 @@ a:focus {
 }
 
 .page-footer.slant-top::before {
-  clip-path: polygon(0 var(--slantHeight), 0 100%, 100% 100%, 100% 0) !important;
+  clip-path: polygon(
+    0 var(--slantHeight),
+    0 100%,
+    100% 100%,
+    100% 0
+  ) !important;
 }
-
 
 .page-footer .section-content {
   display: flex;
@@ -427,7 +460,7 @@ a:focus {
 }
 
 .page-footer .banner > img#bmdv {
-  box-shadow: 0 -3px 5px rgba(0,0,0,0.35);
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.35);
 }
 
 .page-footer .links {
@@ -449,7 +482,7 @@ a:focus {
  * Effects
  **/
 
- /* Slants */
+/* Slants */
 
 .page-section.slant-top,
 .page-section.slant-bottom {
@@ -493,7 +526,11 @@ mark {
 mark {
   color: #000;
   background-color: transparent;
-  background-image: linear-gradient(90deg, var(--primaryBackground) 50%, rgba(255, 255, 255, 0) 50%);
+  background-image: linear-gradient(
+    90deg,
+    var(--primaryBackground) 50%,
+    rgba(255, 255, 255, 0) 50%
+  );
   background-size: 200% 100%;
   background-position: 100% 0;
   margin: 0 -0.2em;
@@ -509,7 +546,7 @@ mark {
 }
 .page-section mark:nth-child(even) {
   border-radius: 28% 0.3em 10% 0.5em;
-  transition-delay: .3s;
+  transition-delay: 0.3s;
 }
 
 .visible mark {
@@ -518,7 +555,6 @@ mark {
   transition: background 0.5s;
   background-position: 0 0;
 }
-
 
 /* Animated Boxes */
 
@@ -535,20 +571,26 @@ mark {
   transition: opacity 0.6s, transform 0.8s;
 }
 
-.visible .boxes > *:nth-child(1) { transition-delay: 0s }
-.visible .boxes > *:nth-child(2) { transition-delay: .2s }
-.visible .boxes > *:nth-child(3) { transition-delay: .4s }
-
+.visible .boxes > *:nth-child(1) {
+  transition-delay: 0s;
+}
+.visible .boxes > *:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.visible .boxes > *:nth-child(3) {
+  transition-delay: 0.4s;
+}
 
 /**
  * Breakpoints
  **/
 
 @media (max-width: 1000px) {
-  .page-header .section-content  {
+  .page-header .section-content {
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas:
+      "language"
       "intro"
       "preview"
       "install";
@@ -568,7 +610,9 @@ mark {
 }
 
 @media (max-width: 700px) {
-  h1, h2, .text-banner {
+  h1,
+  h2,
+  .text-banner {
     font-size: 2rem;
   }
 
@@ -588,8 +632,11 @@ mark {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background-image:
-      linear-gradient(0, rgba(0,35,0,0.5) 0%, rgba(0,35,0,0.5) 100%),
+    background-image: linear-gradient(
+        0,
+        rgba(0, 35, 0, 0.5) 0%,
+        rgba(0, 35, 0, 0.5) 100%
+      ),
       var(--backgroundImage01);
     background-repeat: no-repeat;
     background-size: cover;
